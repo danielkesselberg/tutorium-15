@@ -27,22 +27,25 @@ public class Start {
 
 		/*
 		 * Tabellen-Kopf ausgeben. Dazu wird ein Pattern verwendet. Dieses
-		 * besteht aus drei Teilen und ist so aufgebaut: %1$8s - %1 zeigt auf
-		 * den erste Parameter (hier "Dezimal"). - $8 signalisiert die Laenge des
-		 * Strings (hier sind 8 eingestellt). - s steht fuer String (weil wir
-		 * einen String uebergeben). %2$14s - %2 zeigt auf den zweiten Parameter
-		 * (hier "Roemisch"). - $14 signalisiert die Laenge des Strings (hier
-		 * sind 14 eingestellt). - s steht fuer String (weil wir einen String
-		 * uebergeben). %3$8s - %3 zeigt auf den dritten Parameter (hier
-		 * "Probe"). - $8 signalisiert die Laenge des Strings (hier sind 8
-		 * eingestellt). - s steht fuer String (weil wir einen String uebergeben).
+		 * besteht aus drei Teilen und ist so aufgebaut:
 		 */
+		// %1$8s
+		// - %1 zeigt auf den erste Parameter (hier "Dezimal").
+		// - $8 signalisiert die Laenge des Strings (hier sind 8 eingestellt).
+		// - s steht fuer String (weil wir einen String uebergeben).
+		// %2$14s - %2 zeigt auf den zweiten Parameter (hier "Roemisch").
+		// - $14 signalisiert die Laenge des Strings (hier sind 14 eingestellt).
+		// - s steht fuer String (weil wir einen String uebergeben).
+		// %3$8s
+		// - %3 zeigt auf den dritten Parameter (hier "Probe").
+		// - $8 signalisiert die Laenge des Strings (hier sind 8 eingestellt).
+		// - s steht fuer String (weil wir einen String uebergeben).
 		System.out.format("%1$8s%2$14s%3$8s\n", "Dezimal", "Roemisch", "Probe");
 
 		/*
-		 * Zum testen erzeugen wird 20 zufaellige Zahlen. Die For-Schleife laeuft
-		 * von 1 bis 20. In der Schleife wird mit r.nextInt(3000) eine zufaellige
-		 * Zahl >= 0 && < 3000 erzeugt.
+		 * Zum testen erzeugen wird 20 zufaellige Zahlen. Die For-Schleife
+		 * laeuft von 1 bis 20. In der Schleife wird mit r.nextInt(3000) eine
+		 * zufaellige Zahl >= 0 && < 3000 erzeugt.
 		 */
 		for (int i = 1; i <= 20; i++) {
 
@@ -58,8 +61,8 @@ public class Start {
 			int probe = rz.romToDezimal(rom);
 
 			/*
-			 * Wir geben die Dezimalzahl, Roemische Zahl und Probe aus. Dazu wird
-			 * das gleiche Pattern wie oben verwendet.
+			 * Wir geben die Dezimalzahl, Roemische Zahl und Probe aus. Dazu
+			 * wird das gleiche Pattern wie oben verwendet.
 			 */
 			System.out.format("%1$8s%2$14s%3$8s\n", dezimal, rom, probe);
 		}
