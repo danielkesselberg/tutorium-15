@@ -2,22 +2,22 @@ package roemischeZahlen;
 
 /*
  * Das Package roemischeZahlen besteht aus zwei Dateien. 
- * Die Klasse RomZahl enthält die Methoden dezimalToRom und romToDezimal
+ * Die Klasse RomZahl enthaelt die Methoden dezimalToRom und romToDezimal
  * Die Klasse Start erzeugt ein Objekt der Klasse RomZahl und ruft die Methoden auf.
  */
 public class RomZahl {
 
 	/*
 	 * Die beiden Arrays speichern die Werte und das entsprechende Zeichen. Die
-	 * Arrays dienen dem Umwandeln von Dezimalzahl zu Römischer Zahl.
+	 * Arrays dienen dem Umwandeln von Dezimalzahl zu Roemischer Zahl.
 	 */
 	private int[] wert = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
 	private String[] zeichen = { "M", "CM", "D", "CD", "C", "XC", "L", "XL",
 			"X", "IX", "V", "IV", "I" };
 
 	/*
-	 * Methode dezimalToRom. Die Methode ist öffentlich (public), gibt einen
-	 * String zurück, heißt dezimalToRom und erwartet einen Parameter mit dem
+	 * Methode dezimalToRom. Die Methode ist oeffentlich (public), gibt einen
+	 * String zurueck, heisst dezimalToRom und erwartet einen Parameter mit dem
 	 * Datentyp int.
 	 */
 	public String dezimalToRom(int dezimal) {
@@ -27,7 +27,7 @@ public class RomZahl {
 		String rom = new String();
 
 		/*
-		 * While-Schleife solang die übergebene Zahl größer 0 ist.
+		 * While-Schleife solang die uebergebene Zahl groesser 0 ist.
 		 */
 		while (dezimal > 0) {
 			/*
@@ -37,7 +37,7 @@ public class RomZahl {
 			for (int i = 0; i < wert.length; i++) {
 				/*
 				 * Innerhalb der For-Schleife ist wieder eine While-Schleife.
-				 * Diese überprüft, ob die Zahl durch die entsprechende Zahl aus
+				 * Diese ueberprueft, ob die Zahl durch die entsprechende Zahl aus
 				 * dem Werte-Array teilbar ist. Achtung! Wird ein Int durch
 				 * einen Int geteilt, dann ist das Ergebnis immer ein Int:
 				 */
@@ -46,7 +46,7 @@ public class RomZahl {
 				// 900/1000 = 0
 				while (dezimal / wert[i] > 0) {
 					/*
-					 * Entsprechendes Zeichen an den String rom anhängen.
+					 * Entsprechendes Zeichen an den String rom anhaengen.
 					 */
 					rom = rom + zeichen[i];
 					/*
@@ -58,15 +58,15 @@ public class RomZahl {
 		}
 
 		/*
-		 * Ist dezimal 0, dann wird der String zurückgegeben und die Methode ist
+		 * Ist dezimal 0, dann wird der String zurueckgegeben und die Methode ist
 		 * beendet.
 		 */
 		return rom;
 	}
 
 	/*
-	 * Methode romToDezimal. Die Methode ist öffentlich (public), gibt einen int
-	 * zurück, heißt romToDezimal und erwartet einen Parameter mit dem Datentyp
+	 * Methode romToDezimal. Die Methode ist oeffentlich (public), gibt einen int
+	 * zurueck, heisst romToDezimal und erwartet einen Parameter mit dem Datentyp
 	 * String.
 	 */
 	public int romToDezimal(String rom) {
@@ -76,13 +76,13 @@ public class RomZahl {
 		int dezimal = 1;
 
 		/*
-		 * Die While-Schleife läuft solange bis die richtige Dezimalzahl
-		 * gefunden wurde. Das kann u.U etwas längern dauern.
+		 * Die While-Schleife laeuft solange bis die richtige Dezimalzahl
+		 * gefunden wurde. Das kann u.U etwas laengern dauern.
 		 * 
-		 * Der Ablauf: dezimal zu roemischer Zahl umwandeln und überprüfen ob
-		 * mit rom übereinstimmt. Wenn nein, dann dezimal um 1 erhöhen und
+		 * Der Ablauf: dezimal zu roemischer Zahl umwandeln und ueberpruefen ob
+		 * mit rom uebereinstimmt. Wenn nein, dann dezimal um 1 erhoehen und
 		 * erneut probieren. Wenn ja, dann fertig. Das bedeutet, dass bei
-		 * MMDXXXIII (2533) die Schleife 2533 mal ausgeführt wird.
+		 * MMDXXXIII (2533) die Schleife 2533 mal ausgefuehrt wird.
 		 */
 		while (!rom.equals(this.dezimalToRom(dezimal))) {
 			dezimal = dezimal + 1;
